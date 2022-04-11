@@ -182,6 +182,13 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
             }
         }
     }
+    public func setupRefreshControl(_ item:UIRefreshControl) {
+        if #available(iOS 10.0, *) {
+            self.collectionView.refreshControl = item
+        } else {
+            // Fallback on earlier versions
+        }
+    }
     
     /// The transformer of the pager view.
     @objc
